@@ -28,7 +28,8 @@ Java 콘솔 환경에서 동작하는 **도서 대여 서비스**입니다.
 ---
 
 ## 클래스 관계
-<img width="2163" height="1314" alt="image" src="https://github.com/user-attachments/assets/cc74f634-5a09-4480-88c4-465412e7577a" />
+<img width="1468" height="913" alt="image" src="https://github.com/user-attachments/assets/70d01102-61d7-4d7c-9234-72f3488a66b1" />
+
 
 
 **주요 관계**
