@@ -7,24 +7,29 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         while (true) {
-            System.out.println("\n=== 도서관 시스템 ===");
+            System.out.println("\n=== 도서관 시스템11 ===");
             System.out.println("1. 사용자");
             System.out.println("2. 관리자");
             System.out.println("0. 종료");
             System.out.println("===============");
             System.out.print("선택: ");
-            int role = sc.nextInt();
+            int roleCode = sc.nextInt();
             sc.nextLine();
+            UserRole role = UserRole.fromCode(roleCode);
 
-            if (role == 0) {
+            if (role == UserRole.EXIT) {
                 System.out.println("프로그램을 종료합니다.");
                 break;
             }
 
+            if (role == null) {
+                System.out.println("잘못된 선택입니다.");
+                continue;
+            }
+
             switch (role) {
-                case 1 -> runUserProcess(sc, library);
-                case 2 -> runAdminProcess(sc, library);
-                default -> System.out.println("잘못된 선택입니다.");
+                case USER -> runUserProcess(sc, library);
+                case ADMIN -> runAdminProcess(sc, library);
             }
         }
     }
