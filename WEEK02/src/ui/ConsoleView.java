@@ -1,7 +1,8 @@
 package ui;
+
 public class ConsoleView {
 
-    // ===== 메인 메뉴 =====
+    // 메인 메뉴
     public void showMainMenu() {
         System.out.println("\n=== 도서관 시스템 ===");
         System.out.println("1. 사용자");
@@ -19,8 +20,8 @@ public class ConsoleView {
         System.out.println("프로그램을 종료합니다.");
     }
 
-    // ===== 사용자 메뉴 =====
-    public void showUserMenu() {
+    //사용자 메뉴
+    public void showUserMenu(int ignored) { 
         System.out.println("\n<<< 사용자 메뉴 >>>");
         System.out.println("1. 대여");
         System.out.println("2. 반납");
@@ -30,8 +31,8 @@ public class ConsoleView {
         System.out.print("선택: ");
     }
 
-    // ===== 관리자 메뉴 =====
-    public void showAdminMenu() {
+    //관리자 메뉴
+    public void showAdminMenu(int ignored) {
         System.out.println("\n[[[ 관리자 메뉴 ]]]");
         System.out.println("1. 책 등록");
         System.out.println("2. 책 삭제");

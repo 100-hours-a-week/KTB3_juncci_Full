@@ -1,3 +1,5 @@
+package domain;
+
 public class Magazine extends Book {
     private int issueNumber;
 

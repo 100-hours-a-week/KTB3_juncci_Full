@@ -1,13 +1,16 @@
 import ui.ConsoleController;
 import ui.ConsoleView;
-
+import domain.Library;
 import java.util.Scanner;
+import thread.TimeThread;
 
 public class Main {
     public static void main(String[] args) {
         // 도서관 초기 데이터 세팅
         Library library = new Library();
         library.seedData();
+
+      
 
         // 콘솔 UI 구성 요소 준비
         ConsoleView view = new ConsoleView();

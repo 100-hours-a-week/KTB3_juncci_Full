@@ -1,6 +1,12 @@
 package ui;
 
 import java.util.Scanner;
+import domain.Library;
+import domain.User;
+import domain.Novel;
+import domain.Comic;
+import domain.Magazine;
+import service.Librarian;
 
 public class ConsoleController {
 
@@ -17,7 +23,16 @@ public class ConsoleController {
     public void start() {
         while (true) {
             view.showMainMenu();
-            int code = sc.nextInt(); sc.nextLine();
+            String input = sc.nextLine();
+            int code;
+
+            try {
+                code = Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                view.showInvalidInput();
+                continue;
+            }
+
             UserRole role = UserRole.fromCode(code);
 
             if (role == UserRole.EXIT) {
@@ -40,9 +55,24 @@ public class ConsoleController {
         System.out.print("사용자 이름 입력: ");
         User user = new User(sc.nextLine());
 
-        while (true) {
-            view.showUserMenu();
-            int sel = sc.nextInt(); sc.nextLine();
+        SessionTimerTask timer = new SessionTimerTask(5); // 5초 제한
+        timer.start();
+
+        while (!timer.isExpired()) {
+            view.showUserMenu(0);
+
+            String input = sc.nextLine();
+            if (timer.isExpired()) break;
+
+            int sel;
+            try {
+                sel = Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                if (timer.isExpired()) break;
+                view.showInvalidInput();
+                continue;
+            }
+
             if (sel == 0) break;
 
             switch (sel) {
@@ -61,15 +91,32 @@ public class ConsoleController {
                 default -> view.showInvalidInput();
             }
         }
+
+        timer.stop();
     }
 
     private void runAdmin() {
         System.out.print("관리자 이름 입력: ");
         Librarian librarian = new Librarian(sc.nextLine());
 
-        while (true) {
-            view.showAdminMenu();
-            int sel = sc.nextInt(); sc.nextLine();
+        SessionTimerTask timer = new SessionTimerTask(5); // 5초 제한
+        timer.start();
+
+        while (!timer.isExpired()) {
+            view.showAdminMenu(0);
+
+            String input = sc.nextLine();
+            if (timer.isExpired()) break;
+
+            int sel;
+            try {
+                sel = Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                if (timer.isExpired()) break;
+                view.showInvalidInput();
+                continue;
+            }
+
             if (sel == 0) break;
 
             switch (sel) {
@@ -112,5 +159,7 @@ public class ConsoleController {
                 default -> view.showInvalidInput();
             }
         }
+
+        timer.stop();
     }
 }

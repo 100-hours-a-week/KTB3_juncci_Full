@@ -1,3 +1,5 @@
+package ui;
+
 public enum UserRole {
     USER(1), ADMIN(2), EXIT(0);
     private final int code;

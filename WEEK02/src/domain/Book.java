@@ -1,3 +1,4 @@
+package domain;
 public abstract class Book {
     protected String id;
     protected String title;
@@ -44,3 +45,4 @@ public abstract class Book {
     public String getTitle() { return title; }
     public boolean isBorrowed() { return isBorrowed; }
 }
+

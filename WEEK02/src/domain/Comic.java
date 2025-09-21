@@ -1,3 +1,5 @@
+package domain;
+
 public class Comic extends Book {
     private String illustrator;
 
