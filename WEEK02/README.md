@@ -181,12 +181,6 @@ UserRole role = UserRole.fromCode(code);
 * 의존 방향: `app → ui → service → domain` 단방향
 * 효과: 모듈성 향상, 테스트/확장 용이
 
-### 3) 입력 처리 일관화
-
-* `Scanner.nextInt()` ↔ `nextLine()` 섞임으로 인한 버퍼 꼬임 방지
-* **모든 입력을 `nextLine()`으로 받고 `Integer.parseInt()`** 로 숫자 변환
-* 잘못된 입력은 `try-catch`로 사용자 친화 메시지 출력
-
 ---
 
 ## 비동기 적용 전/후 비교
