@@ -23,7 +23,7 @@ Java 콘솔 환경에서 동작하는 **도서 대여 서비스**입니다.
 * `User`: 도서 **대출/반납/내 대출 목록 조회**
 * `Librarian`(extends `User`): **관리자 전용 CRUD** 위임(`Library` 사용)
 
-  ### 추가된 엔티티
+### 추가된 엔티티
 * `ConsoleView`: 메뉴/메시지 출력
 * `ConsoleController`: **흐름 제어**, 입력 처리, **세션 타이머** 연동
 * `UserRole`(enum): 메뉴 역할 선택(매직 넘버 제거용)
@@ -191,6 +191,14 @@ UserRole role = UserRole.fromCode(code);
 
 ## 비동기 적용 전/후 비교
 
+**비동기 적용 전**
+
+https://github.com/user-attachments/assets/3e431a26-65f3-4af2-b621-2a40cd99a9bd
+
+
+**비동기 적용 후**
+
+https://github.com/user-attachments/assets/fdd5b62a-5a44-4841-a2c5-3da38d056b4c
 
 
 ---
