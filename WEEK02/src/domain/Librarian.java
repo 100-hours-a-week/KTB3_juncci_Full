@@ -1,4 +1,4 @@
-package service;
+package domain;
 import domain.Library;
 import domain.Book;
 import domain.User;

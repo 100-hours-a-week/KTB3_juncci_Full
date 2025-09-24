@@ -6,7 +6,7 @@ import domain.User;
 import domain.Novel;
 import domain.Comic;
 import domain.Magazine;
-import service.Librarian;
+import domain.Librarian;
 
 public class ConsoleController {
 
